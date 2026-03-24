@@ -43,4 +43,4 @@ Check out my live portfolio here:
 - **GitHub:** [github.com/godwin-02](https://github.com/godwin-02)
 
 ---
-*Built with ❤️ by Godwin F - 2026*
+*Built by Godwin F - 2026*
