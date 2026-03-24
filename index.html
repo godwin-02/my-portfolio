@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Godwin | Software Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --bg:#0b0f19;
+  --card:#111827;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --accent:#3b82f6;
+}
+
+body.light{
+  --bg:#ffffff;
+  --card:#f3f4f6;
+  --text:#111827;
+  --muted:#6b7280;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  transition:0.3s;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 10%;
+  background:var(--bg);
+  border-bottom:1px solid #1f2937;
+  z-index:1000;
+}
+
+nav h3{
+  font-weight:600;
+}
+
+nav ul{
+  display:flex;
+  gap:20px;
+  list-style:none;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--muted);
+  font-size:14px;
+}
+
+nav a:hover{
+  color:var(--accent);
+}
+
+.theme-btn{
+  cursor:pointer;
+  border:1px solid var(--muted);
+  padding:5px 10px;
+  border-radius:6px;
+  font-size:12px;
+  user-select: none;
+}
+
+/* HERO */
+#home{
+  padding-top:140px;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-text{
+  max-width:600px;
+}
+
+.hero-text span{
+  color:var(--accent);
+  font-weight:600;
+}
+
+/* Typing Effect CSS */
+.typing-container {
+  margin: 15px 0;
+  min-height: 1.6em; /* Prevents layout jumping */
+  display: flex;
+  align-items: center;
+}
+
+#typing-text {
+  font-size: 1.2rem;
+  color: var(--accent);
+  font-weight: 600;
+  border-right: 3px solid var(--accent);
+  padding-right: 5px;
+  white-space: nowrap;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* SECTION */
+section{
+  padding:100px 10%;
+  max-width:1100px;
+  margin:auto;
+}
+
+h1{font-size:2.8rem;margin-bottom:10px}
+h2{font-size:1.8rem;margin-bottom:20px}
+p{color:var(--muted);line-height:1.6}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 20px;
+  border-radius:6px;
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  transition:0.2s;
+  margin-right: 10px;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.btn.secondary{
+  background:none;
+  border:1px solid var(--muted);
+  color:var(--text);
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+/* CARD */
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:10px;
+  border:1px solid #1f2937;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:var(--accent);
+}
+
+/* SKILLS */
+#skills .card{
+  text-align:center;
+  font-weight:500;
+}
+
+/* PROJECT */
+.card a{
+  display:inline-block;
+  margin-top:10px;
+  font-size:14px;
+  color:var(--accent);
+  text-decoration:none;
+}
+
+.card a:hover{
+  text-decoration:underline;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  border-top:1px solid #1f2937;
+  color:var(--muted);
+}
+
+footer a{
+  color:var(--accent);
+  margin:0 10px;
+  text-decoration:none;
+}
+
+footer a:hover{
+  text-decoration:underline;
+}
+
+@media(max-width: 768px) {
+  h1 { font-size: 2.2rem; }
+  nav ul { display: none; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h3>Godwin</h3>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="theme-btn" onclick="toggleTheme()">Toggle Theme</div>
+</nav>
+
+<section id="home">
+  <div class="hero-text">
+    <h1>Hi, I'm <span>Godwin</span></h1>
+    
+    <div class="typing-container">
+      <p id="typing-text"></p>
+    </div>
+
+    <div style="margin-top: 25px;">
+        <a href="#projects" class="btn">View Projects</a>
+        <a href="./Godwin_developer_resume.pdf" target="_blank" class="btn secondary">Resume</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About</h2>
+  <p>
+    Motivated B.Tech IT student with strong expertise in Java, Web Development, and Full Stack technologies.
+    Passionate about building efficient backend systems and responsive web applications.
+    Seeking an entry-level Software Developer role to contribute and grow in a professional environment.
+  </p>
+</section>
+
+<section id="skills">
+  <h2>Tech Stack</h2>
+  <div class="grid">
+    <div class="card">Java</div>
+    <div class="card">HTML</div>
+    <div class="card">CSS</div>
+    <div class="card">JavaScript</div>
+    <div class="card">React.js</div>
+    <div class="card">MERN Stack</div>
+    <div class="card">Spring Boot</div>
+    <div class="card">MySQL</div>
+    <div class="card">MongoDB</div>
+    <div class="card">Oracle SQL</div>
+    <div class="card">Git & GitHub</div>
+    <div class="card">VS Code</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Student Service Platform</h3>
+      <p>Full stack application using Java & Spring Boot for managing student services.</p>
+      <a href="https://github.com/Karthik-off/eduflow-ai" target="_blank">View Code →</a>
+    </div>
+    <div class="card">
+      <h3>Feedback Portal</h3>
+      <p>MERN stack app to collect and manage user feedback efficiently.</p>
+      <a href="https://github.com/godwin-02/feedbackapp" target="_blank">View Code →</a>
+    </div>
+    <div class="card">
+      <h3>Todo App</h3>
+      <p>Simple and interactive task management web app using JavaScript.</p>
+      <a href="https://github.com/godwin-02/To-do-list" target="_blank">View Code →</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: godwinf2021@gmail.com</p>
+  <p>Phone: 7358629271</p>
+</section>
+
+<footer>
+  <p>© 2026 Godwin</p>
+  <div style="margin-top: 10px;">
+    <a href="https://github.com/godwin-02" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/godwin-f" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+// Typing Animation Logic
+const roles = [
+  "Java Full Stack Developer",
+  "Software Engineer",
+  "MERN Stack Specialist",
+  "Web Developer"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingElement = document.getElementById("typing-text");
+
+function typeEffect() {
+  const currentRole = roles[roleIndex];
+  
+  if (isDeleting) {
+    typingElement.textContent = currentRole.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    typingElement.textContent = currentRole.substring(0, charIndex + 1);
+    charIndex++;
+  }
+
+  let typeSpeed = isDeleting ? 40 : 100;
+
+  if (!isDeleting && charIndex === currentRole.length) {
+    typeSpeed = 2000; // Pause at the end
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    roleIndex = (roleIndex + 1) % roles.length;
+    typeSpeed = 500;
+  }
+
+  setTimeout(typeEffect, typeSpeed);
+}
+
+// Theme Toggle Logic
+function toggleTheme(){
+  document.body.classList.toggle("light");
+}
+
+// Initialize
+document.addEventListener("DOMContentLoaded", () => {
+    typeEffect();
+});
+</script>
+
+</body>
+</html>
